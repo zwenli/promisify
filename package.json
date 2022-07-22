@@ -1,0 +1,19 @@
+{
+  "name": "@zwenli/promisify",
+  "version": "1.0.0",
+  "description": "用来体验 npm publish 的一个示例仓库",
+  "type": "module",
+  "exports": "./src/index.js",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "promisify"
+  ],
+  "author": "zhang wenli",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^4.3.1"
+  }
+}
