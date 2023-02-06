@@ -10,10 +10,14 @@
   "type": "module",
   "exports": "./src/index.js",
   "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "ava",
     "publish": "./publish.sh",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "release-it"
   },
   "keywords": [
     "promisify"
