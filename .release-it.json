@@ -2,6 +2,10 @@
   "git": {
     "commitMessage": "release: v${version}"
   },
+  "github": {
+    "release": true,
+    "web": true
+  },
   "hooks": {
     "after:bump": "echo 更新版本成功"
   },
