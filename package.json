@@ -1,6 +1,6 @@
 {
   "name": "@zwenli/promisify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "用来体验 npm publish 的一个示例仓库",
   "homepage": "https://github.com/zwenli/promisify",
   "repository": {
