@@ -1,4 +1,4 @@
-import { promisify } from '../src/index.js'
+import { promisify, promisifyNoError } from '../src/index.js'
 import test from 'ava'
 
 
@@ -29,5 +29,27 @@ test('reject', async (t) => {
   } catch(err) {
     t.is(err.message, 'false')
     t.pass()
+  }
+})
+
+const pNoErrorMock = promisifyNoError(mock)
+
+test('promisifyNoError resolve', async (t) => {
+  try {
+    const res = await pNoErrorMock(true)
+    t.is(res[1], true)
+    t.pass()
+  } catch {
+    t.fail()
+  }
+})
+
+test('promisifyNoError reject', async (t) => {
+  try {
+    const res = await pNoErrorMock(false)
+    t.is(res[0].message, 'false')
+    t.pass()
+  } catch {
+    t.fail()
   }
 })

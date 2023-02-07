@@ -22,3 +22,20 @@ export function promisify(original) {
   Reflect.setPrototypeOf(fn, Reflect.getPrototypeOf(original))
   return Object.defineProperties(fn, Object.getOwnPropertyDescriptors(original))
 }
+
+// for callbacks without error for its first argument
+export function promisifyNoError(original) {
+  validateFunction(original)
+
+  function fn(...args) {
+    return new Promise((resolve) => {
+      args.push((...values) => {
+        resolve(values)
+      })
+      Reflect.apply(original, this, args)
+    })
+  }
+
+  Reflect.setPrototypeOf(fn, Reflect.getPrototypeOf(original))
+  return Object.defineProperties(fn, Object.getOwnPropertyDescriptors(original))
+}
